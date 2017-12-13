@@ -13,6 +13,10 @@ public class Piece {
 	public int getNature() {
 		return this.extremites;
 	}
+	
+	public void setNature(int nat) {
+		this.extremites = nat;
+	}
 
 
 

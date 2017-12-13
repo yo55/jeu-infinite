@@ -20,6 +20,15 @@ public class Jeu {
 		afficherJeu();
 		afficherGrille();
 	}
+	
+	public void update() {
+		for(int y = 0; y<nbLignes; y++) {
+			for(int x = 0; x<nbColonnes; x++) {
+				jeu[x][y].setNature( (int)Math.floor(4*Math.random()) + 1 );
+			}
+		}
+		afficherJeu();
+	}
 
 	private void creerJeu() {
 		for(int y = 0; y<nbLignes; y++) {
@@ -95,7 +104,7 @@ public class Jeu {
 			new Trait (Points[nbColonnes-1][y], Points[nbColonnes-1][y+1]);
 
 		}
-		for(int x = 0; x<nbColonnes; x++) {
+		for(int x = 0; x<nbColonnes-1; x++) {
 			new Trait (Points[x][nbLignes-1], Points[x+1][nbLignes-1]);
 		}
 	}

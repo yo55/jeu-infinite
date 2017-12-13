@@ -18,7 +18,7 @@ public class MainJeu  {
 
 		Fenetre.createFenetre(500, 500, "Mon jeu");
 
-		Jeu monJeu = new Jeu(15,15);
+		Jeu monJeu = new Jeu(12,8);
 
 		
 		ImageIcon img = new ImageIcon("quit-512.png");
@@ -36,6 +36,17 @@ public class MainJeu  {
 		Fenetre.getInstance().getContentPane().add(bouton);
 		Fenetre.getInstance().setVisible(true);
 
+		// PSYCHEDELIC !
+		while(true) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			monJeu.update();
+		}
 
 
 
