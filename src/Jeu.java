@@ -3,6 +3,7 @@ public class Jeu {
 
 	// Ensemble des pièces
 	private Piece[][] jeu;
+
 	private Point[][] Points ;
 
 	private int nbLignes;
@@ -109,4 +110,3 @@ public class Jeu {
 		}
 	}
 }
-
