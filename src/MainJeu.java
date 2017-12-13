@@ -39,7 +39,7 @@ public class MainJeu  {
 		// PSYCHEDELIC !
 		while(true) {
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
