@@ -18,8 +18,9 @@ public class Jeu {
 		Points = new Point[nbcolones][nblignes];
 
 		creerJeu();
-		afficherJeu();
-		afficherGrille();
+		afficherJeuConsole();
+		//afficherJeu();
+		//afficherGrille();
 	}
 	
 	public void update() {
