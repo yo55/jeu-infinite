@@ -1,6 +1,13 @@
 public class Piece {
 
+	// nombre d'extémités de la pièce
 	private int extremites;
+	
+	// type de la pièce
+	private typePiece type;
+	
+	// orientation courante
+	private orientPiece sens;
 
 	private static final char[] EXTENDED = { 0x00C7, 0x00FC, 0x00E9, 0x00E2,
 		0x00E4, 0x00E0, 0x00E5, 0x00E7, 0x00EA, 0x00EB, 0x00E8, 0x00EF,
@@ -26,14 +33,24 @@ public class Piece {
 		}
 		return (char) code;
 	}
-
-	private static final void printChar(int code) {
-		System.out.printf("%c%n", getAscii(code));
-	}
-
-
+	
+	// Ancien constructeur
 	public Piece (int extr) {
 		this.extremites = extr;
+		this.type = typePiece.TUBE; // defaut
+		this.sens = orientPiece.NORD;// defaut
+	}
+	
+	public Piece (typePiece type) {
+		this.type = type; 
+		this.extremites = type.getNbExtr();
+		this.sens = orientPiece.NORD;// defaut
+	}
+	
+	public Piece (typePiece type, orientPiece sens) {
+		this.type = type; 
+		this.extremites = type.getNbExtr();
+		this.sens = sens;
 	}
 
 	public String toString() {
