@@ -37,7 +37,17 @@ public class Piece {
 	// Ancien constructeur
 	public Piece (int extr) {
 		this.extremites = extr;
-		this.type = typePiece.TUBE; // defaut
+		
+		if (extr == 1) {
+			this.type = typePiece.TERMINAL; // defaut
+		}else if (extr == 2) {
+			this.type = typePiece.TUBE; // defaut
+		}else if (extr == 3) {
+			this.type = typePiece.T3;
+		}else{
+			this.type = typePiece.T4;
+		}
+			
 		this.sens = orientPiece.NORD;// defaut
 	}
 	
@@ -54,20 +64,7 @@ public class Piece {
 	}
 
 	public String toString() {
-		switch (this.extremites) {
-
-		case 1:	
-			return ""+(char)getAscii(232); // Phi majuscule
-		case 2:
-			return ""+(char)getAscii(186); // Barre verticale
-		case 3:
-			return ""+(char)getAscii(185); // T à gauche			
-		case 4:
-			return ""+(char)getAscii(206); // quatre extremités
-		default:
-			return "0";	// inconnu
-
-		}
+		return ""+getAscii(this.type.getRefSymbol());	
 	}
 
 	public int getNature() {
